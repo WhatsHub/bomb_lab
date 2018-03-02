@@ -1,0 +1,14 @@
+1. Lösungsstring: "Border relations with Canada have never been better."
+
+Der erste Lösungs String für Phase 1 lässt sich einfach dem Assembler Code 
+von Phase 1 entnehmen.
+
+Phase 1 läd die Adresse für den Eingabe String nach Register %eax
+und vergleicht diesen mit einem String mit der festen Adresse 0x402400,
+welche ins Register %esi geladen wird.
+
+Um den String in an dieser Adresse auszulesen startet man gdb bomb.
+Mit x /53c 0x402400 kann man sich dann 53 Chars ab Adresse 402400 ausgeben
+lassen. 
+
+2. Lösungsstring: 
