@@ -11,4 +11,16 @@ Um den String in an dieser Adresse auszulesen startet man gdb bomb.
 Mit x /53c 0x402400 kann man sich dann 53 Chars ab Adresse 402400 ausgeben
 lassen. 
 
-2. Lösungsstring: 
+2. Lösungsstring: "1 2 4 8 16 32"
+
+Der zweite String lässt sich auf Grund von Berechnungen in Funktion phase_2 ableiten.
+Zunächst ruft die Funktion eine Hilfsfunktion namens "read_six_numbers". Diese
+Funktion benutzt die C-Funktion sscanf um sechs Integer aus dem Eingabestring zu entnehmen.
+Darauß lässt sich schließen, dass der Lösungsstring "%d %d %d %d %d %d" formatiert ist.
+Also aus sechs Zahlen besteht.
+Zurück in der Funktion phase_2 werden diese Zahlen mittels einer Schleife auf bestimmte
+Begebenheiten überprüft. Bei Analyse des Assembler Codes stellt sich raus, dass die
+erste Zahl auf Gleichheit mit 1 geprüft wird. Alle weiteren Zahlen werden mittels einer
+Schleife darauf geprüft, ob sie das Doppelte ihrere Vorgängerzahl sind.
+
+3. Lösungsstring: 
