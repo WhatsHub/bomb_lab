@@ -23,4 +23,13 @@ Begebenheiten überprüft. Bei Analyse des Assembler Codes stellt sich raus, das
 erste Zahl auf Gleichheit mit 1 geprüft wird. Alle weiteren Zahlen werden mittels einer
 Schleife darauf geprüft, ob sie das Doppelte ihrere Vorgängerzahl sind.
 
-3. Lösungsstring: 
+3. Lösungsstring: "1 311"
+
+Wieder wird der Eingabestring mit sscanf eingelesen und nach einem Format-String
+ausgewertet. Der Format-String wird im Register %esi an sscanf übergeben und
+lautet "%d %d". Darauß lässt sich schließen, dass der Lösungsstring 2 Integer
+enthält. Nach dem Aufruf von sscanf wird überprüft ob auch wirklich zwei Integer
+gescant wurden. Als nächstes folgt ein Switchstatement bzw. eine Jumptable.
+Dabei dient der erste eingegebene Wert als Case. Der erste Wert kann zwischen
+0 und 6 liegen. Nimmt man Case 1, so wird der zweite Wert mit 0x137 (Dec: 311)
+verglichen. Sind sie gleich ist die 3. Phase damit beendet.
